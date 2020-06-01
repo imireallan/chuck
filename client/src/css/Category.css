@@ -1,0 +1,15 @@
+.category__item {
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: .3em;
+    padding: .2em;
+    transition: background 300ms linear;
+}
+.category__item a {
+    color: rgba(0,0,0,0.5)
+}
+
+.category__item:hover,
+.category__item:focus {
+    background: var(--color-grey-lt);
+}

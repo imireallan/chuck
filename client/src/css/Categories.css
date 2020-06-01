@@ -1,16 +1,5 @@
-.category__list {
-    text-transform: capitalize;
-    
-}
-.category__item {
-    font-weight: bold;
-    margin: .3em;
-    padding: .2em;
-    transition: transform 300ms ease;
-}
-
-.category__item:hover,
-.category__item:focus {
-    background-color: var(--color-grey-lt);
-    transform: scale(1.04);
+.title {
+    border-bottom: 1px solid var(--color-grey-md);
+    margin-bottom: 1em;
+    padding: 1em 0 .5em 0;
 }

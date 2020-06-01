@@ -1,16 +1,23 @@
 import React from 'react';
+import  ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 
-import Header from './components/Header'
-import Home from './components/Home'
-import './App.css';
+import Routes from './routes';
+
+// const cache = new InMemoryCache();
+const uri = 'http://localhost:8001/graphql'
+
+// Apollo client
+const client = new ApolloClient({
+	uri
+});
 
 function App() {
-  return (
-    <>
-      <Header/>
-      <Home/>
-    </>
-  );
+	return (
+		<ApolloProvider client={client}>
+			<Routes />;
+		</ApolloProvider>
+	);
 }
 
 export default App;

@@ -1,32 +1,26 @@
-import React, {useState} from 'react';
+import React, { useContext } from 'react';
+
+import Category from './Category';
+import { MyContext } from './Home';
 import '../css/Categories.css'
 
 function Categories() {
-	const [ categories, _ ] = useState([
-		'animal',
-		'career',
-		'celebrity',
-		'dev',
-		'explicit',
-		'fashion',
-		'food',
-		'history',
-		'money',
-		'movie',
-		'music',
-		'political',
-		'religion',
-		'science',
-		'sport',
-		'travel'
-	]);
-	const categoriesElement = categories.map((category) => {
-		return <li className="category__item" key={category}>{category}</li>;
-	});
+	const { data, error } = useContext(MyContext);
+	const displayCategories = () => {
+		if (error) return `Refresh the browser to fetch categories`;
+		return (
+			data &&
+			data.categories.map((category) => {
+				return <Category key={category} data={category} />;
+			})
+		);
+	};
+
 	return (
-		<section className="categories">
-			<ul className="category__list">{categoriesElement}</ul>
-		</section>
+		<React.Fragment>
+			<h4 className="title">Categories</h4>
+			<ul>{displayCategories()}</ul>
+		</React.Fragment>
 	);
 }
 

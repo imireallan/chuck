@@ -1,43 +1,36 @@
-import React, { useState } from 'react';
-import JokeItem from './JokeItem';
-import '../css/JokesList.css';
+// import React from 'react';
 
-function JokesList() {
-	const [ jokes, _ ] = useState([
-		{
-			value: 'Chuck Norris can set ants on fire with a magnifying glass. At night.',
-			icon_url: 'https://assets.chucknorris.host/img/avatar/chuck-norris.png',
-			url: 'https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw',
-			created_at: '2020-01-05 13:42:19.104863',
-			updated_at: '2020-01-05 13:42:19.104863',
-			categories: [ 'animal' ]
-		},
-		{
-			value: 'Chuck Norris can set ants on fire with a magnifying glass. At night.',
-			icon_url: 'https://assets.chucknorris.host/img/avatar/chuck-norris.png',
-			url: 'https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw',
-			created_at: '2020-01-05 13:42:19.104863',
-			updated_at: '2020-01-05 13:42:19.104863',
-			categories: [ 'animal' ]
-		},
-		{
-			value: 'Chuck Norris can set ants on fire with a magnifying glass. At night.',
-			icon_url: 'https://assets.chucknorris.host/img/avatar/chuck-norris.png',
-			url: 'https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw',
-			created_at: '2020-01-05 13:42:19.104863',
-			updated_at: '2020-01-05 13:42:19.104863',
-			categories: [ 'animal' ]
-		}
-	]);
+// import JokeItem from './JokeItem';
+// import '../css/JokesList.css';
 
-	const jokesListElement = jokes.map((joke) => {
-		return <JokeItem key={joke.id} joke={joke} />;
-	});
-	return (
-		<section className="jokes__list">
-			<div className="main__body flex">{jokesListElement}</div>
-		</section>
-	);
-}
+// function JokesList() {
+// 	const category = 'animal';
+// 	const { loading, error, data, refetch, networkStatus } = useQuery(GET_JOKE, {
+// 		variables: { category },
+// 		skip: !category,
+// 		notifyOnNetworkStatusChange: true
+// 	});
 
-export default JokesList;
+// 	console.log(data);
+
+// 	if (networkStatus === 4) return 'Refetching!';
+// 	if (loading) return null;
+// 	if (error) return `Error! ${error}`;
+
+// 	// const jokesListElement = data.jokes.map((joke) => {
+// 	// 	return <JokeItem key={joke.id} joke={joke} />;
+// 	// });
+// 	return (
+// 		<section className="jokes__list">
+// 			{data.jokes ? (
+// 				<div className="main__body flex">
+// 					<JokeItem joke={data.jokes} />
+// 				</div>
+// 			) : (
+// 				<h3>Choose a category to see a joke</h3>
+// 			)}
+// 		</section>
+// 	);
+// }
+
+// export default JokesList;
