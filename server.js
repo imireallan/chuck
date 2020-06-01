@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const dotEnv = require("dotenv");
 const cors = require("cors");
 
+const typeDefs = require("./typeDefs");
+
 // setting up the env variables
 dotEnv.config();
 
@@ -19,12 +21,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // setting up the apollo server middleware
-const typeDefs = gql`
-    type Query {
-        hello: String!
-    }
-`;
-
 const resolvers = {
     Query: {
         hello: () => "Hello world!",
