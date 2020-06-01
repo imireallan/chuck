@@ -8,6 +8,7 @@ module.exports = gql`
     type Joke {
         id: ID!
         value: String!
+        categories: [String!]
         icon_url: String!
         url: String!
         created_at: String!

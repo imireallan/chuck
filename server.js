@@ -1,10 +1,11 @@
 const express = require("express");
-const { ApolloServer, gql } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 const morgan = require("morgan");
 const dotEnv = require("dotenv");
 const cors = require("cors");
 
 const typeDefs = require("./typeDefs");
+const resolvers = require("./resolvers");
 
 // setting up the env variables
 dotEnv.config();
@@ -14,18 +15,13 @@ const app = express();
 // cors middleware
 app.use(cors());
 
-//seting up the morgan logger middleware
+//setting up the morgan logger middleware
 app.use(morgan("dev"));
 
 //body parser middleware
 app.use(express.json());
 
 // setting up the apollo server middleware
-const resolvers = {
-    Query: {
-        hello: () => "Hello world!",
-    },
-};
 
 const apolloServer = new ApolloServer({
     typeDefs,
