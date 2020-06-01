@@ -1,0 +1,25 @@
+.main {
+	background-color: var(--color-white);
+    height: calc(100vh - calc(var(--header-padding)*2));
+    /* padding: 2em 0; */
+    display: grid;
+    grid: auto / 200px 1fr;
+}
+
+.main {
+	height: 100vh;
+}
+
+.main__title {
+    text-align: center;
+    /* grid-area: title; */
+}
+.sidebar {
+    padding: 1em;
+    border-right: 2px solid var(--color-grey-md);
+
+}
+
+.main-home h2{
+    margin: 1em 0;
+}
