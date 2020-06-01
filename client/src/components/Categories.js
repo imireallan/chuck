@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import Category from './Category';
 import { MyContext } from './Home';
-import '../css/Categories.css'
+import '../css/Categories.css';
 
 function Categories() {
 	const { data, error } = useContext(MyContext);
+
 	const displayCategories = () => {
 		if (error) return `Refresh the browser to fetch categories`;
 		return (
