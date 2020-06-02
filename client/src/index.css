@@ -9,12 +9,11 @@
 }
 
 :root {
-	
 	--color-orange: #ff9900;
 	--color-white: #fff;
 	--color-grey-lt: #f1f1eb;
-  --color-grey-md: #e5e5df;
-  --header-padding: 2em;
+	--color-grey-md: #e5e5df;
+	--header-padding: 2em;
 }
 
 body {
@@ -37,6 +36,24 @@ body {
 	margin: 0 auto;
 }
 
+.center {
+	text-align: center;
+}
+
 .flex {
 	display: flex;
+}
+
+.jokes__loader {
+	width: 65vw;
+	text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+	.jokes__loader {
+		display: grid;
+		place-items: center;
+		width: 75vw;
+		text-align: unset;
+	}
 }

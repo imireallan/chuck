@@ -2,35 +2,43 @@ import styled from 'styled-components';
 import media from '../../components/globalStyles';
 
 const Home = styled.main`
-	color: var(--color-white);
-	background-color: var(--color-orange);
-	padding: var(--header-padding);
-`;
-
-Home.NavListItem = styled.li`margin-left: 1em;`;
-
-Home.Wrapper = styled.div`
-	justify-content: space-between;
-	${media.small`
-        flex-direction: column;
-		align-items: center;
+	background-color: var(--color-white);
+	height: calc(100vh - calc(var(--header-padding)*2));
+	display: grid;
+	grid: auto / 200px 1fr;
+	height: 100vh;
+	${media('max-width').small`
+		display:flex;
+		align-items:flex-start;
 `};
 `;
-Home.Logo = styled.a`
-	color: inherit;
-	${media.small`margin-bottom: 1em;`};
-`;
-Home.Logo.Sup = styled.sup`
-	font-size: 0.6rem;
-	font-weight: bold;
-`;
-Home.NavLink = styled.a`
-	color: inherit;
-	text-transform: uppercase;
-    font-weight: bold;
-    ${media.small`margin-bottom: 1em;`};
+
+Home.Sidebar = styled.section`
+	padding: 1em;
+	border-right: 2px solid var(--color-grey-md);
+	height: 100vh;
+	${media('max-width').small`
+		max-width: 150px;
+`};
 `;
 
-Home.NavList = styled.u``;
+Home.Main = styled.section`
+	height: 100vh;
+	${media('max-width').small`
+        display: flex;
+		align-items: flex-start;
+		flex-direction:column;
+`};
+`;
+
+Home.Title = styled.h2`
+	text-align: center;
+	margin: 1em 0;
+	${media('max-width').small`
+		font-size: 1rem;
+		text-align:center;
+		padding:1em
+`};
+`;
 
 export default Home;
