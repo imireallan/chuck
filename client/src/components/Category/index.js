@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { MyContext } from './Home';
-import '../css/Category.css';
+import { MyContext } from '../Home';
+// import '../css/Category.css';
 
 function Category({ data }) {
 	const { handleCategory } = useContext(MyContext);
