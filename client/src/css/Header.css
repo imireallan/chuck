@@ -9,6 +9,10 @@
     padding: var(--header-padding);
 }
 
+.header .center {
+	text-align: center;
+}
+
 .header > div {
     justify-content: space-between;
 }
@@ -22,15 +26,6 @@
 	font-weight: bold;
 }
 
-.nav__list__item {
-	margin-left: 1em;
-}
-
-.nav__link {
-	color: inherit;
-	text-transform: uppercase;
-	font-weight: bold;
-}
 
 @media only screen and (max-width:600px) {
 	.header > div {
