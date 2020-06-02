@@ -3,10 +3,10 @@ import { useQuery } from '@apollo/react-hooks';
 import Loader from 'react-loader-spinner';
 
 
-import { GET_JOKE } from '../queries';
-import { MyContext } from './Home';
+import { GET_JOKE } from '../../queries';
+import { MyContext } from '../Home';
 
-import '../css/JokeItem.css';
+// import '../css/JokeItem.css';
 
 function JokeItem() {
 	const { category } = useContext(MyContext);

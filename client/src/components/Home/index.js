@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Loader from 'react-loader-spinner';
 
-import { GET_CATEGORIES } from '../queries';
-import JokeItem from './JokeItem';
-import Categories from './Categories';
-import '../css/Home.css';
+import { GET_CATEGORIES } from '../../queries';
+import JokeItem from '../JokeItem';
+import Categories from '../Categories';
+// import '../css/Home.css';
 
 export const MyContext = React.createContext();
 

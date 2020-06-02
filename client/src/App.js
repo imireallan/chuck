@@ -4,12 +4,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 
 import Routes from './routes';
 
-// const cache = new InMemoryCache();
-const uri = '/graphql'
-
 // Apollo client
 const client = new ApolloClient({
-	uri
+	uri:'/graphql'
 });
 
 function App() {
