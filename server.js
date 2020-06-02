@@ -6,6 +6,8 @@ const cors = require('cors');
 
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
+const { mongoConnection } = require('./utils');
+const {verifyUser} = require('./helpers/context');
 
 // setting up the env variables
 dotEnv.config();
@@ -14,6 +16,9 @@ const app = express();
 
 // cors middleware
 app.use(cors());
+
+// set up mongo db connection
+mongoConnection();
 
 //setting up the morgan logger middleware
 if (process.env.NODE_ENV === 'development') {
@@ -28,7 +33,11 @@ app.use(express.json());
 
 const apolloServer = new ApolloServer({
 	typeDefs,
-	resolvers
+	resolvers,
+	context: async ({ req }) => {
+		await verifyUser(req);
+		return { email: req.email };
+	}
 });
 
 apolloServer.applyMiddleware({ app, path: '/graphql' });
