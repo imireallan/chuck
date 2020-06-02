@@ -5,7 +5,7 @@ import Loader from 'react-loader-spinner';
 import { GET_CATEGORIES } from '../../queries';
 import JokeItem from '../JokeItem';
 import Categories from '../Categories';
-// import '../css/Home.css';
+import Home from './style'
 
 export const MyContext = React.createContext();
 
@@ -21,25 +21,25 @@ function MyProvider({ children }) {
 	);
 }
 
-function Home() {
+function HomeComponent() {
 	const { loading } = useContext(MyContext);
 	return (
-		<main className="main container">
-			<section className="sidebar">
+		<Home className="container">
+			<Home.Sidebar>
 				{loading ? <Loader className="loader" type="Bars" color="rgb(255, 153, 0)" /> : <Categories />}
-			</section>
-			<section className="main-home">
-				<h2 className="main__title">Chuck Noriss Jokes</h2>
+			</Home.Sidebar>
+			<Home.Main>
+				<Home.Title>Chuck Noriss Jokes</Home.Title>
 				<JokeItem />
-			</section>
-		</main>
+			</Home.Main>
+		</Home>
 	);
 }
 
 export default () => {
 	return (
 		<MyProvider>
-			<Home />
+			<HomeComponent />
 		</MyProvider>
 	);
 };

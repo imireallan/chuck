@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { MyContext } from '../Home';
-// import '../css/Category.css';
+import {CategoryItem, CategoryLink} from './style'
 
 function Category({ data }) {
 	const { handleCategory } = useContext(MyContext);
@@ -10,11 +10,11 @@ function Category({ data }) {
 		handleCategory(data);
 	};
 	return (
-		<li className="category__item">
-			<a href="#" onClick={handleClick}>
+		<CategoryItem className="category__item">
+			<CategoryLink href="#" onClick={handleClick}>
 				{data}
-			</a>
-		</li>
+			</CategoryLink>
+		</CategoryItem>
 	);
 }
 

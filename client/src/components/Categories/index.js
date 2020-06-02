@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import Category from '../Category';
 import { MyContext } from '../Home';
-// import '../css/Categories.css';
+import Title from './style'
 
 function Categories() {
 	const { data, error } = useContext(MyContext);
@@ -19,7 +19,7 @@ function Categories() {
 
 	return (
 		<React.Fragment>
-			<h4 className="title">Categories</h4>
+			<Title>Categories</Title>
 			<ul>{displayCategories()}</ul>
 		</React.Fragment>
 	);

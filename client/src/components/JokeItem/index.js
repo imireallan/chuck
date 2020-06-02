@@ -2,11 +2,9 @@ import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Loader from 'react-loader-spinner';
 
-
 import { GET_JOKE } from '../../queries';
 import { MyContext } from '../Home';
-
-// import '../css/JokeItem.css';
+import Joke from './style';
 
 function JokeItem() {
 	const { category } = useContext(MyContext);
@@ -15,8 +13,8 @@ function JokeItem() {
 		skip: !category,
 		notifyOnNetworkStatusChange: true
 	});
- 
-	if(loading || networkStatus === 4) {
+
+	if (loading || networkStatus === 4) {
 		return <Loader className="jokes__loader" type="Bars" color="rgb(255, 153, 0)" />;
 	}
 
@@ -24,24 +22,22 @@ function JokeItem() {
 	return (
 		<div>
 			{category ? (
-				<div className="container joke-container flex">
-					<div className="joke">
-						<figure className="joke__image__container">
-							<img src={data.jokes.icon_url} alt="joke image" className="joke__image" />
-						</figure>
+				<Joke.Wrapper className="container flex">
+					<Joke>
+						<Joke.ImageContainer>
+							<Joke.Image src={data.jokes.icon_url} alt="joke avatar" />
+						</Joke.ImageContainer>
 						<div className="joke__value">
 							<p>{data.jokes.value}</p>
 						</div>
-						<a className="joke__url" href={data.jokes.url}>
-							visit joke
-						</a>
-					</div>
-					<button onClick={() => refetch()} className="btn">Fetch another joke</button>
-				</div>
+						<Joke.Link href={data.jokes.url}>visit joke</Joke.Link>
+					</Joke>
+					<Joke.Button onClick={() => refetch()}>Fetch another joke</Joke.Button>
+				</Joke.Wrapper>
 			) : (
-				<div className="container sub-title">
-					<h3>Choose a category to seejokes</h3>
-				</div>
+				<Joke.Subtitle>
+					<h3>Click a Category</h3>
+				</Joke.Subtitle>
 			)}
 		</div>
 	);
