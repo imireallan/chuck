@@ -1,7 +1,6 @@
 const path = require('path');
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const morgan = require('morgan');
 const dotEnv = require('dotenv');
 const cors = require('cors');
 
@@ -17,7 +16,10 @@ const app = express();
 app.use(cors());
 
 //setting up the morgan logger middleware
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+	const morgan = require('morgan');
+	app.use(morgan('dev'));
+}
 
 //body parser middleware
 app.use(express.json());
@@ -32,10 +34,11 @@ const apolloServer = new ApolloServer({
 apolloServer.applyMiddleware({ app, path: '/graphql' });
 
 // configure production env
-if (process.env.NODE_ENV === 'production') {
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('public'));
 	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+		res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 	});
 }
 
