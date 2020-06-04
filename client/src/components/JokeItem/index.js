@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner';
 import { GET_JOKE } from '../../queries';
 import { MyContext } from '../Home';
 import Joke from './style';
+import { Button } from '../globalStyles'
 
 function JokeItem() {
 	const { category } = useContext(MyContext);
@@ -32,7 +33,7 @@ function JokeItem() {
 						</div>
 						<Joke.Link href={data.jokes.url}>visit joke</Joke.Link>
 					</Joke>
-					<Joke.Button onClick={() => refetch()}>Fetch another joke</Joke.Button>
+					<Button onClick={() => refetch()}>Fetch another joke</Button>
 				</Joke.Wrapper>
 			) : (
 				<Joke.Subtitle>

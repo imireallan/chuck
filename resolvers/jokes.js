@@ -1,4 +1,4 @@
-const {useAxios} = require("../utils");
+const {useAxios, } = require("../utils");
 
 module.exports = {
     Query: {

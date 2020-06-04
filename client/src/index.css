@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
 	margin: 0;
@@ -14,15 +15,17 @@
 	--color-grey-lt: #f1f1eb;
 	--color-grey-md: #e5e5df;
 	--header-padding: 2em;
+	--input-font-size:.8em;
+	height: 100%;
 }
 
 body {
 	color: #333;
 	background-color: var(--color-grey-md);
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 /* =================================
@@ -47,6 +50,20 @@ body {
 .jokes__loader {
 	width: 40vw;
 	text-align: center;
+}
+
+.sign-in {
+	color: inherit;
+}
+.sign-in:hover,
+.sign-in:focus {
+	color: var(--color-orange);
+}
+
+.form-errors {
+	color: rgba(255,0,0,0.5);
+	font-size: .75em;
+	font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {

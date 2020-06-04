@@ -62,25 +62,6 @@ Joke.Value = styled.div`
 	color: rgb(0, 128, 128);
 `;
 
-Joke.Button = styled.button`
-	padding: 1em 2em;
-	color: #333;
-	background: transparent;
-	border: none;
-	outline: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	border-radius: 3px;
-	box-shadow: 0 0 4px 0 rgba(255, 153, 0, 0.7);
-	transition: background 300ms linear;
-	margin: 1em;
-	&:hover,
-	&:focus {
-		color: var(--color-white);
-		background: var(--color-orange);
-	}
-`;
-
 Joke.ImageContainer = styled.figure`width: 100%;`;
 
 Joke.Image = styled.img`width: 50%;`;

@@ -13,11 +13,16 @@ Header.Wrapper = styled.div`
         flex-direction: column;
 		align-items: center;
 `};
+${media('min-width').small`
+        font-size: 3rem;
+`};
 `;
 Header.Logo = styled.a`
 	color: inherit;
 	font-size:1.5rem;
+	font-weight:bold;
 	${media('max-width').small`margin-bottom: 1em;`};
+	
 `;
 Header.Logo.Sup = styled.sup`
 	font-size: 0.6rem;

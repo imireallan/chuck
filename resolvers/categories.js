@@ -1,7 +1,7 @@
-const useAxios = require("../utils");
+const { useAxios } = require('../utils');
 
 module.exports = {
-    Query: {
-        categories: async () => await useAxios(),
-    },
+	Query: {
+		categories: async () => await useAxios()
+	}
 };
