@@ -26,7 +26,7 @@ Auth.Wrapper = styled.div`
 	${media('min-width').small`
         width:70%;
         max-width: 600px;
-        padding:3em 1em;
+        padding:3em 2em;
 
     `};
 `;

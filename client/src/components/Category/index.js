@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { MyContext } from '../Home';
-import {CategoryItem, CategoryLink} from './style'
+import { CategoryContext} from '../../Context/categoryContext'
+import { CategoryItem, CategoryLink } from './style';
 
 function Category({ data }) {
-	const { handleCategory } = useContext(MyContext);
+	const { handleCategory } = useContext(CategoryContext);
 
 	const handleClick = (e) => {
 		e.preventDefault();

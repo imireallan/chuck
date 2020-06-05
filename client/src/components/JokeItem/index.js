@@ -3,12 +3,12 @@ import { useQuery } from '@apollo/react-hooks';
 import Loader from 'react-loader-spinner';
 
 import { GET_JOKE } from '../../queries';
-import { MyContext } from '../Home';
+import { CategoryContext } from '../../Context/categoryContext';
 import Joke from './style';
-import { Button } from '../globalStyles'
+import { Button } from '../globalStyles';
 
 function JokeItem() {
-	const { category } = useContext(MyContext);
+	const { category } = useContext(CategoryContext);
 	const { loading, error, data, refetch, networkStatus } = useQuery(GET_JOKE, {
 		variables: { category },
 		skip: !category,
